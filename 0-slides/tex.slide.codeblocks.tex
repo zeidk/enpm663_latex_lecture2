@@ -1,0 +1,42 @@
+\documentclass[\string~/GitHub/sthlmNordBeamerTheme/sthlmNordLightDemo.tex]{subfiles}
+
+\begin{document}
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[fragile,allowframebreaks]{Using Listings Package for Code Printing}
+
+\begin{lstlisting}
+% testing
+\documentclass[opt]{name}
+\prob Solve the equation \( \cos x = \frac{1}{2} \)
+for \( 0 \le x \le 2\pi \).
+
+\soln A fantastic solution will follow.
+\end{lstlisting}
+
+\begin{alertblock}{Warning}
+  Breaking Change!  Listings is now used instead of Minted.
+\end{alertblock}
+\end{frame}
+
+%   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[fragile, allowframebreaks]{A Python Example}
+
+\begin{lstlisting}[language={python}]
+import os
+import sys
+import subprocess
+import getpass
+from pathlib import Path
+import shortuuid
+from datetime import datetime
+from tabulate import tabulate
+\end{lstlisting}
+\end{frame}
+%   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\end{document}
