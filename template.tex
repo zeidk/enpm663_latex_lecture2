@@ -2398,6 +2398,8 @@ The goal of Subscribers is to only receive Messages from Topics.
 \vspace*{\fill}
 \end{frame}
 
+
+
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 \begin{frame}[fragile]{\sec}
 \vspace*{\fill}
@@ -2416,6 +2418,7 @@ There can be multiple Subscribers to a Topic.
 \vspace*{\fill}
 \end{frame}
 
+ 
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 \begin{frame}[fragile]{\sec}
 \vspace*{\fill}
@@ -2449,6 +2452,7 @@ A Publisher can publish to different Topics.
 \end{frame}
 
 
+
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 \begin{frame}[fragile]{\sec}
 \vspace*{\fill}
@@ -2472,7 +2476,13 @@ A Node can be both a Publisher and a Subscriber.
 \begin{center} 
 
 \begin{compactitem}
-    \item A Node can be both a Publisher and a Subscriber.
+\item Publishers and subscribers must work with the same Message type.
+\item The goal of Publishers is to only send Messages to Topics.
+\item The goal of Subscribers is to only receive Messages from Topics.
+\item There can be multiple Subscribers to a Topic. 
+\item There can be multiple Publishers to the same Topic.
+\item A Publisher can publish to different Topics.
+\item A Node can be both a Publisher and a Subscriber.
 \end{compactitem}
 
 \end{center}
