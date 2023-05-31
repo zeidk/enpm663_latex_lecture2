@@ -46,6 +46,7 @@
 \usepackage{minted}
 
 \usemintedstyle{tango}
+\usepackage{xparse}
 
 \usepackage{paralist}                       % compactitem, compactenum
 
@@ -423,7 +424,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % href stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\urllink}[2]{\href{#1}{\cnordEleven{{\tiny\faChevronRight}\uline{#2}}}}
+\newcommand{\urllink}[2]{\href{#1}{\cnordEleven{\uline{#2}}}}
 
 \newcommand{\myemail}[2]{\href{#1}{\cnordTwelve{{\scriptsize\faEnvelope[regular]~}\uline{#2}}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -452,6 +453,14 @@
 \newcommand\secsecsec{\cnordSix{\secname}~\sectionColor{\small\faChevronRight}~{\cnordFive{\small\subsecname}}~\subsectionColor{\footnotesize\faChevronRight}~{\cnordFour{\footnotesize\subsubsecname}\hfill\mydisclaimer}}
 
 \newcommand\secsecsecsec[1]{\cnordSix{\secname}~\sectionColor{\small\faChevronRight}~{\cnordFive{\small\subsecname}}~\subsectionColor{\footnotesize\faChevronRight}~{\cnordFour{\footnotesize\subsubsecname}}~\subsubsectionColor{\scriptsize\faChevronRight}~{\cnordFour{\scriptsize #1}\hfill\mydisclaimer}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myDefinitionIcon}{\iconColor{\faScroll}\xspace}
+% \newcommandx{\myDefinitionHeader}[3][1=12pt, 2=12pt]{{\fontsize{#1}{#2}\selectfont \myDefinitionIcon #3} \doublerulefill}
+
+% \newcommand{\myDefinitionHeader}[3][12pt]{\fontsize{#2}{#1}\selectfont #3}
+
 
 % \newcommand\secsecsec{{\color{darkgray}{\normalsize{\secname}} \textcolor{Tomato3}{|}{{\color{darkgray!90}{\small\subsecname}}}\textcolor{Tomato3}{|}{\color{darkgray!70}{\footnotesize\subsubsecname}}\myhrulefill}}
 
@@ -1560,7 +1569,7 @@ nobeforeafter,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,before upper={\vphantom{dlg}},
   colframe=nordZero,coltext=nordZero,colback=white,
   overlay={\begin{tcbclipinterior}\fill[nordZero] (frame.south west)
-    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=0] {\faFolderOpen} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=0] {\faFolder[regular]} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
 
 \newtcbox{\myFile}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,before upper={\vphantom{dlg}},
@@ -1699,7 +1708,8 @@ nobeforeafter,
 \graphicspath{{./assets/}, {./figures/}} 
 % > > >	Optional use of using subfiles to make content more modular
 \usepackage{subfiles}
-
+\usepackage{twoopt}
+\usepackage{xargs}
 
 % > > > Document Information
 \title[ENPM663~|~ROS -- Part 1]{\cnordZero{ENPM663} -- \cnordTwo{L2: ROS -- Part 1}}
@@ -1787,7 +1797,8 @@ urlcolor={citationcolor}
 \vspace*{\fill}
 \begin{center} 
 
-{\Large \mydefinition \textsc{Conventions}} \doublerulefill
+
+{\large \myDefinitionIcon Conventions} \doublerulefill
 
 \begin{compactitem}
 \footnotesize
@@ -2159,6 +2170,9 @@ If you modify \myFile{bashrc} with a terminal already opened, your modifications
 \begin{frame}[fragile]{\secsec}
 \vspace*{\fill}
 \begin{center} 
+
+{\large \mynote Resources} \doublerulefill
+
 \begin{compactitem}
     \item Official website: \urllink{http://wiki.ros.org/}{http://wiki.ros.org/}
     \item Tutorials: \urllink{http://wiki.ros.org/ROS/Tutorials}{http://wiki.ros.org/ROS/Tutorials}
@@ -2177,7 +2191,7 @@ If you modify \myFile{bashrc} with a terminal already opened, your modifications
 \vspace*{\fill}
 \begin{center} 
 
-{\large \mynote \textsc{ROS1: Drawbacks}} \doublerulefill
+{\large \mynote ROS1: Drawbacks} \doublerulefill
 
 \begin{compactitem}
     \item ROS1 was mainly developed for the academic research community in 2007 by Willow Garage.
@@ -2198,7 +2212,7 @@ If you modify \myFile{bashrc} with a terminal already opened, your modifications
 \begin{frame}[fragile]{\secsec}
 \vspace*{\fill}
 \begin{center} 
-{\large \mynote \textsc{ROS1: Missing Use Cases}} \doublerulefill
+{\large \mynote ROS1: Missing Use Cases} \doublerulefill
 
 
    \begin{compactitem}
@@ -2217,7 +2231,7 @@ If you modify \myFile{bashrc} with a terminal already opened, your modifications
 \begin{frame}[fragile]{\secsec}
 \vspace*{\fill}
 \begin{center} 
-{\large \mynote \textsc{ROS2: Overview}} \doublerulefill
+{\large \mynote ROS2: Overview} \doublerulefill
 
 \begin{itemize}
     \item ROS2 is not built on top of ROS1. ROS developers wanted ROS1 as it exists today to keep working and be unaffected by the development of ROS2. \item The API in ROS2 has been modified since most of the code in ROS1 is from 2007-2009.
@@ -2247,7 +2261,7 @@ If you modify \myFile{bashrc} with a terminal already opened, your modifications
 \vspace*{\fill}
 \begin{center} 
 
-{\large \mynote \textsc{DDS: Data Distributed Service}} \doublerulefill
+{\large \mynote DDS: Data Distributed Service} \doublerulefill
 
 
 \begin{itemize}
@@ -2270,7 +2284,7 @@ If you modify \myFile{bashrc} with a terminal already opened, your modifications
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 \vspace*{\fill}
 \begin{center} 
-{\large \mytodo \textsc{Check DDS Version}} \doublerulefill
+{\large \mytodo Check DDS Version} \doublerulefill
 
 \begin{enumerate}
 \small
@@ -2405,16 +2419,16 @@ eval "$(register-python-argcomplete3 colcon)"
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\large \mydefinition \textsc{Node}} \doublerulefill
+{\large \mydefinition Node} \doublerulefill
 
 \large \emph{A \urllink{http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes}{Node} is a small program written in Python or \CC that executes some relatively simple task or process. Nodes are usually categorized into Publishers (send data) and Subscribers (receive data).} 
 
 
-{\large \mydefinition \textsc{Topic}} \doublerulefill
+{\large \mydefinition Topic} \doublerulefill
 
 \large \emph{A \urllink{http://wiki.ros.org/Topics}{Topic} is a named bus\footnote{A communication system that transfers data between components inside a computer or between computers} over which Nodes exchange Messages.}
 
-{\large \mydefinition \textsc{Message}} \doublerulefill
+{\large \mydefinition Message} \doublerulefill
 
 \large \emph{A \urllink{http://wiki.ros.org/Messages}{Message} is a packet of data (a simple data structure comprising typed fields).}
 
@@ -2654,7 +2668,7 @@ There are mainly 2 ways to run Nodes in ROS.
 \begin{center} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\large \myinfo \textsc{Introspect Nodes and Topics}} \doublerulefill
+{\large \myinfo Introspect Nodes and Topics} \doublerulefill
 
 
 \hrulefill
@@ -2692,7 +2706,7 @@ There are mainly 2 ways to run Nodes in ROS.
 \begin{frame}[fragile]{\sec}
 \vspace*{\fill}
 \begin{center} 
-{\large \mydefinition \textsc{Workspace}} \doublerulefill
+{\large \mydefinition Workspace} \doublerulefill
 
 {\large \emph{A ROS workspace is a folder where you write all packages  needed to build a ROS2 application.}}
 
@@ -2809,7 +2823,7 @@ eval "$(register-python-argcomplete3 colcon)"
 \begin{frame}[fragile]{\sec}
 \vspace*{\fill}
 \begin{center} 
-{\large \mydefinition \textsc{Package}} \doublerulefill
+{\large \mydefinition Package} \doublerulefill
 
 {\emph{Software in ROS is organized in packages. A package contains anything that logically constitutes a useful module. The goal of these packages it to provide this useful functionality in an easy-to-consume manner so that software can be easily reused.}}
 
@@ -3009,7 +3023,7 @@ eval "$(register-python-argcomplete3 colcon)"
 \vspace*{\fill}
 \begin{center} 
 
-{\large \mynote \textsc{Python Packages}} \doublerulefill
+{\large \mynote Python Packages} \doublerulefill
 
 \begin{itemize}
     \item You can execute Python Nodes without building the Python package. However, when a package is built, colcon installs the Python scripts in a place where they can find other modules from other packages, where they can be found by other scripts. It will also allow you to start a node with \myTool{ros2 run}, add it in a launch file, pass parameters to it, etc.
@@ -3424,16 +3438,10 @@ enpm663
 \begin{frame}[fragile]{\sec}
 \vspace*{\fill}
 \begin{center} 
-\Large
 
-\myinfo~\cnordZero{L3:} ROS -- Part II.
+{\large \myinfo \cnordZero{L2:} Course Introduction} \doublerulefill
 
-\begin{itemize}
-\normalsize
-    \item Configure packages.
-    \item Write Nodes.
-    \item Write Launch files.
-\end{itemize}
+{\large \mywarning Quiz} \doublerulefill
 
 \end{center}
 \vspace*{\fill}
