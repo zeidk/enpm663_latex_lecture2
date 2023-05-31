@@ -1301,7 +1301,7 @@ nobeforeafter,
 
 
 \newcommand{\mybestpractice}{\iconColor{\faThumbsUp}\xspace}
-\newcommand{\mytodo}{\textcolor{iconColor}{\faListOl}\xspace}
+\newcommand{\mytodo}{\textcolor{iconColor}{\faTasks}\xspace}
 \newcommand{\mynote}{\iconColor{\faEdit}\xspace}
 \newcommand{\mywarning}{\iconWarningColor{\faExclamationTriangle}\xspace}
 \newcommand{\myinfo}{\iconColor{\faInfoCircle}\xspace}
@@ -1313,7 +1313,8 @@ nobeforeafter,
 
 
 \newcommand{\mybestpracticeW}{\textcolor{white}{\faThumbsUp}\xspace}
-\newcommand{\mytodoW}{\textcolor{white}{\faListOl}\xspace}
+\newcommand{\mybadpractice}{\iconWarningColor{\faThumbsDown}\xspace}
+\newcommand{\mytodoW}{\textcolor{white}{\faTasks}\xspace}
 \newcommand{\mynoteW}{\textcolor{white}{\faEdit}\xspace}
 \newcommand{\mywarningW}{\textcolor{white}{\faExclamationTriangle}\xspace}
 \newcommand{\myinfoW}{\textcolor{white}{\faInfoCircle}\xspace}
@@ -1356,10 +1357,14 @@ nobeforeafter,
   colframe=black,coltext=white,colback=black,
   overlay={\begin{tcbclipinterior}\fill[white] (frame.south west)
     rectangle node[text=BrickRed,font=\sffamily\bfseries\tiny,rotate=0] {\faTerminal} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+
+
+    
+
     
 \newtcbox{\myterminalScript}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,fontupper=\scriptsize\raleway,before upper={\vphantom{dlg}},
-  colframe=black,coltext=white,colback=black,
+  colframe=BrickRed,coltext=white,colback=black,
   overlay={\begin{tcbclipinterior}\fill[white] (frame.south west)
     rectangle node[text=BrickRed,font=\sffamily\bfseries\tiny,rotate=0] {\faTerminal} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
 
@@ -1388,9 +1393,15 @@ nobeforeafter,
     rectangle node[text=white,font=\sffamily\bfseries\scriptsize,rotate=0] {\faTools} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
 
 
+\definecolor{roscolor}{HTML}{EBCB8B}
+% \definecolor{roscolor}{HTML}{AEBDCA}
 
-\definecolor{roscolor}{HTML}{AEBDCA}
-
+\newtcbox{\myNode}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
+  right=0mm,left=6mm,arc=1pt,boxsep=1pt,before upper={\vphantom{dlg}},
+  colframe=black,coltext=nordZero,colback=white,
+  overlay={\begin{tcbclipinterior}\fill[roscolor] (frame.south west)
+    rectangle node[text=black,font=\sffamily\bfseries\footnotesize,rotate=0] {n} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+    
 \newtcbox{\mynodeNormal}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,fontupper=\normalsize\raleway,before upper={\vphantom{dlg}},
   colframe=black,coltext=nordZero,colback=white,
@@ -1413,7 +1424,7 @@ nobeforeafter,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,fontupper=\scriptsize\raleway,before upper={\vphantom{dlg}},
   colframe=black,coltext=nordZero,colback=white,
   overlay={\begin{tcbclipinterior}\fill[roscolor] (frame.south west)
-    rectangle node[text=black,font=\sffamily\bfseries\scriptsize,rotate=0] {$\mathcal{N}$} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+    rectangle node[text=black,font=\sffamily\bfseries\footnotesize,rotate=0] {\raleway n} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
     
     
 \newtcbox{\myframeNormal}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
@@ -1442,6 +1453,14 @@ nobeforeafter,
     
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtcbox{\myTopic}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0.2mm,bottom=0.2mm,
+  right=0.2mm,left=6mm,arc=1pt,boxsep=1pt,before upper={\vphantom{dlg}},
+  colframe=black,coltext=nordZero,colback=white,
+  overlay={\begin{tcbclipinterior}\fill[roscolor] (frame.south west)
+    rectangle node[text=black,font=\sffamily\bfseries\scriptsize,rotate=0] {\coco t} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+
+    
 \newtcbox{\mytopicNormal}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,fontupper=\normalsize\raleway,before upper={\vphantom{dlg}},
   colframe=black,coltext=nordZero,colback=white,
@@ -1464,7 +1483,7 @@ nobeforeafter,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,fontupper=\scriptsize\raleway,before upper={\vphantom{dlg}},
   colframe=black,coltext=nordZero,colback=white,
   overlay={\begin{tcbclipinterior}\fill[roscolor] (frame.south west)
-    rectangle node[text=black,font=\sffamily\bfseries\scriptsize,rotate=0] {$\mathcal{T}$} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+    rectangle node[text=black,font=\sffamily\bfseries\footnotesize,rotate=0] {\raleway t} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcbox{\myparameterNormal}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
@@ -1516,6 +1535,44 @@ nobeforeafter,
   overlay={\begin{tcbclipinterior}\fill[roscolor] (frame.south west)
     rectangle node[text=black,font=\sffamily\bfseries\scriptsize,rotate=0] {$\mathcal{M}$} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtcbox{\myKeyboardShortcut}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
+  right=0mm,left=6mm,arc=1pt,boxsep=1pt,before upper={\vphantom{dlg}},
+  colframe=OliveGreen,coltext=nordZero,colback=white,
+  overlay={\begin{tcbclipinterior}\fill[OliveGreen] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=0] {\faKeyboard} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+
+
+\newtcbox{\myROSPackage}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
+  right=0mm,left=6mm,arc=1pt,boxsep=1pt, before upper={\vphantom{dlg}},
+  colframe=nordZero,coltext=nordZero,colback=white,
+  overlay={\begin{tcbclipinterior}\fill[nordZero] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=0] {\faToolbox} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+
+    
+\newtcbox{\myTerminal}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
+  right=0mm,left=6mm,arc=1pt,boxsep=1pt, before upper={\vphantom{dlg}},
+  colframe=BrickRed,coltext=white,colback=black,
+  overlay={\begin{tcbclipinterior}\fill[white] (frame.south west)
+    rectangle node[text=BrickRed,font=\sffamily\bfseries\tiny,rotate=0] {\faTerminal} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+    
+\newtcbox{\myFolder}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
+  right=0mm,left=6mm,arc=1pt,boxsep=1pt,before upper={\vphantom{dlg}},
+  colframe=nordZero,coltext=nordZero,colback=white,
+  overlay={\begin{tcbclipinterior}\fill[nordZero] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=0] {\faFolderOpen} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\myFile}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
+  right=0mm,left=6mm,arc=1pt,boxsep=1pt,before upper={\vphantom{dlg}},
+  colframe=nordZero,coltext=nordZero,colback=white,
+  overlay={\begin{tcbclipinterior}\fill[nordZero] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=0] {\faFile*[regular]} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
+    
+\newtcbox{\myTool}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
+  right=0mm,left=6mm,arc=1pt,boxsep=1pt, before upper={\vphantom{dlg}},
+  colframe=nordZero,coltext=nordZero,colback=white,
+  overlay={\begin{tcbclipinterior}\fill[nordZero] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=0] {\faTools} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
 
 \newtcbox{\mypackageNormal}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,fontupper=\normalsize\raleway,before upper={\vphantom{dlg}},
@@ -1600,6 +1657,7 @@ nobeforeafter,
     rectangle node[text=white,font=\sffamily\bfseries\scriptsize,rotate=0] {\faFolderOpen} ([xshift=6mm]frame.north west);\end{tcbclipinterior}}}
     
     
+
     
 \newtcbox{\myfileNormal}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.5pt,top=0mm,bottom=0mm,
   right=0mm,left=6mm,arc=1pt,boxsep=1pt,fontupper=\normalsize\raleway,before upper={\vphantom{dlg}},
@@ -1734,10 +1792,10 @@ urlcolor={citationcolor}
 \begin{compactitem}
 \footnotesize
     \item This is a \urllink{ros.org}{link}
-    \item This is a \myfileScript{file.txt}
-    \item This is a \mydirScript{folder}
-    \item This is a \myterminalScript{terminal command}
-    \item This is a \mykbScript{keyboard shortcut}
+    \item This is a \myFile{file.txt}
+    \item This is a \myFolder{folder}
+    \item This is a \myTerminal{terminal command}
+    \item This is a \myKeyboardShortcut{keyboard shortcut}
 \end{compactitem}
 
 \hrulefill
@@ -1745,12 +1803,13 @@ urlcolor={citationcolor}
 \begin{compactitem}
 \footnotesize
 \item[] \mybestpractice Best practice.
+% \item[] \mybadpractice Bad practice.
 \item[] \mycodesyntax Code syntax.
 \item[] \mydefinition Definition.
 \item[] \mynote Important note.
-\item[] \myquestion Important question.
+% \item[] \myquestion Important question.
 \item[] \myreminder Reminder.
-\item[] \mytodo To do.
+\item[] \mytodo Task to do.
 \item[] \mywarning Warning.
 \end{compactitem}
 
@@ -1781,6 +1840,10 @@ urlcolor={citationcolor}
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 \begin{frame}[fragile]{\sec}
 \vspace*{\fill}
+
+{\large \mynote Programming Languages in ARIAC} \doublerulefill
+
+
 \begin{center} 
     \begin{compactitem}
     \item \CC and Python can be used to develop a control system for ARIAC.
@@ -1820,20 +1883,12 @@ urlcolor={citationcolor}
     \begin{compactitem}
     \footnotesize
         \item The GNU Bourne-Again Shell (\texttt{bash}), the C Shell (\texttt{csh}), the Korn shell (\texttt{ksh}), the Z shell (\texttt{zsh}), etc.
-        \item Check the current shell of your system with \myterminalFoot{ps -p \$\$} 
+        \item Check the current shell of your system with \myTerminal{ps -p \$\$} 
     \end{compactitem}
     \item A shell script is a plain text file which contains a series of shell commands. Anything you can run normally on the command line can be put into a script and vice-versa.
+    \item \mynote I use \urllink{https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH}{zsh} instead of bash.
 \end{compactitem}
 
-
-{\large \mydefinition Terminal} \doublerulefill
-
-\emph{A text window program that runs a shell (BASH shell in Ubuntu).}
-\begin{compactitem}
-\footnotesize
-        \item Some bash commands are blocking and the only way to terminate these commands is to click in the terminal and then \mykbFoot{Ctrl+c}
-        \item You can open a terminal with \mykbFoot{Ctrl+Alt+t}
-    \end{compactitem}
 \end{center}
 \vspace*{\fill}
 \end{frame}
@@ -1843,26 +1898,48 @@ urlcolor={citationcolor}
 \vspace*{\fill}
 \begin{center} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\large \mynote} \doublerulefill
+{\large \mydefinition Terminal} \doublerulefill
 
-\large 
-
-I use \urllink{https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH}{zsh} instead of bash.
+\emph{A text window program that runs a shell (BASH shell in Ubuntu).}
+\begin{compactitem}
+\small
+        \item Some bash commands are blocking and the only way to terminate these commands is to click in the terminal and then \myKeyboardShortcut{Ctrl+c}
+        \item You can open a terminal with \myKeyboardShortcut{Ctrl+Alt+t}
+        \item \mynote I use \urllink{https://gnome-terminator.org/}{terminator} for the terminal.
+        \item \mybestpractice Be efficient, use the \myKeyboardShortcut{Tab} key for auto-completion when working with the terminal.
+    \end{compactitem}
 \end{center}
 \vspace*{\fill}
 \end{frame}
+
+% \begin{frame}[fragile]{\sec}
+% \vspace*{\fill}
+% \begin{center} 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% {\large \mynote} \doublerulefill
+
+
+% \begin{compactitem}
+%     \large
+%     \item I use \urllink{https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH}{zsh} instead of bash.
+%     \item I use \urllink{https://gnome-terminator.org/}{terminator} for the terminal.
+
+% \end{compactitem}
+% \end{center}
+% \vspace*{\fill}
+% \end{frame}
 
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
-\begin{frame}[fragile]{\sec}
-\vspace*{\fill}
-\begin{center} 
+% \begin{frame}[fragile]{\sec}
+% \vspace*{\fill}
+% \begin{center} 
 
-{\Large \mybestpractice} \doublerulefill
+% {\Large \mybestpractice} \doublerulefill
 
-{\large Be efficient, use the \mykbNormal{Tab} key for autocompletion when working with the terminal.}
-\end{center}
-\vspace*{\fill}
-\end{frame}
+% {\large Be efficient, use the \mykbNormal{Tab} key for autocompletion when working with the terminal.}
+% \end{center}
+% \vspace*{\fill}
+% \end{frame}
 
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 \subsection{bashrc}
@@ -1873,21 +1950,21 @@ I use \urllink{https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH}{zsh} inst
 
 {\large \mydefinition bashrc File} \doublerulefill
 
-\myfileSmall{bashrc} \emph{ is a hidden bash script located in your home directory and runs whenever it is started interactively. It initializes an interactive shell session. In other words, everything in this script is executed when you open a terminal.}
+\myFile{bashrc} \emph{ is a hidden bash script located in your home directory and runs whenever it is started interactively. It initializes an interactive shell session. In other words, everything in this script is executed when you open a terminal.}
 
 \hrulefill
 
 
 \begin{compactitem}
-    \item \myfileSmall{bashrc} is a hidden file located in your Home directory.
+    \item \myFile{bashrc} is a hidden file located in your Home directory.
     \item To display hidden files and folders:
     \begin{compactitem}
-        \item \myterminalSmall{ls -a} in a terminal.
-        \item From a GUI file manager: \mykbSmall{Ctrl+h}
+        \item \myTerminal{ls -a} in a terminal.
+        \item From a GUI file manager: \myKeyboardShortcut{Ctrl+h}
     \end{compactitem}
     \item You put commands in this file to set up the shell for use in your particular environment, or to customize things to your preferences.
     \begin{compactitem}
-        \item Common things to put in \myfileSmall{bashrc} are functions, aliases, and environment variables.
+        \item Common things to put in \myFile{bashrc} are functions, aliases, and environment variables.
     \end{compactitem}
 \end{compactitem}
 \end{center}
@@ -1902,7 +1979,7 @@ I use \urllink{https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH}{zsh} inst
 \vspace*{\fill}
 \begin{center} 
 
-{\large \mycodesyntax} \doublerulefill
+{\large \mycodesyntax Functions} \doublerulefill
 
 Bash functions may be declared in two different formats.
 
@@ -1922,7 +1999,7 @@ greeting () {
 }
 \end{bashscript}
 
-\myterminalFoot{greeting} to call the function.
+\myTerminal{greeting} to call the function.
 \end{compactitem}
     \end{column}
     
@@ -1940,7 +2017,7 @@ function greeting () {
 }
 \end{bashscript}
 
-\myterminalFoot{greeting} to call the function.
+\myTerminal{greeting} to call the function.
 \end{compactitem}
 \end{column}
  \end{columns}
@@ -1955,7 +2032,7 @@ function greeting () {
 \vspace*{\fill}
 \begin{center} 
 
-{\large \mycodesyntax} \doublerulefill
+{\large \mycodesyntax Functions} \doublerulefill
 
 Passing arguments to a function.
 
@@ -1968,7 +2045,7 @@ greeting () {
 }
 \end{bashscript}
 
-\myterminalSmall{greeting John Doe} to call the function with arguments.
+\myTerminal{greeting John Doe} to call the function with arguments.
 \item The parameters are \$1, \$2, \ldots, corresponding to the position of the argument passed after the function's name.
 \item The \$0 variable is reserved for the function's name.
 \item The \$\#  variable holds the number of positional parameters/arguments passed to the function.
@@ -1979,7 +2056,7 @@ test(){
 
 \end{bashscript}
 
-\myterminalSmall{test a b c d e f}
+\myTerminal{test a b c d e f}
 \end{compactitem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1996,7 +2073,7 @@ test(){
 \vspace*{\fill}
 \begin{center} 
 
-{\large \mydefinition} \doublerulefill
+{\large \mydefinition Aliases} \doublerulefill
 
 \emph{Bash aliases are essentially shortcuts that can save you from having to remember or type long commands.}
 
@@ -2033,19 +2110,19 @@ alias identifier="value"
 \vspace*{\fill}
 \begin{center} 
 
-{\large \mynote source command} \doublerulefill
+{\large \mynote source Command} \doublerulefill
 
 
-If you modify \myfileSmall{bashrc} with a terminal already opened, your modifications will not automatically take effect in the current terminal.
+If you modify \myFile{bashrc} with a terminal already opened, your modifications will not automatically take effect in the current terminal.
 
 
 \myhrulefill
 
 \begin{compactitem}
 % \item Opening a new terminal each time is not efficient at all.
-\item The command \mytoolSmall{source <file>} allows you to execute each line of a file in the current terminal.
-\item To reload \myfileSmall{bashrc} in the current terminal: \myterminalSmall{source \textasciitilde/.bashrc} (or create an alias for this command as seen in the previous slide).
-\item \mynote The command \mytoolSmall{. <file>} does the same thing as \mytoolSmall{source <file>}
+\item The command \myTool{source <file>} allows you to execute each line of a file in the current terminal.
+\item To reload \myFile{bashrc} in the current terminal: \myTerminal{source \textasciitilde/.bashrc} (or create an alias for this command as seen in the previous slide).
+\item \mynote The command \myTool{. <file>} does the same thing as \myTool{source <file>}
 \end{compactitem}
 
 \end{center}
@@ -2197,8 +2274,8 @@ If you modify \myfileSmall{bashrc} with a terminal already opened, your modifica
 
 \begin{enumerate}
 \small
-    \item \myterminalSmall{source /opt/ros/galactic/setup.bash}
-    \item \myterminalSmall{ros2 doctor -{}-report}
+    \item \myTerminal{source /opt/ros/galactic/setup.bash}
+    \item \myTerminal{ros2 doctor -{}-report}
 \end{enumerate}
 
 \hrulefill
@@ -2236,6 +2313,15 @@ If you modify \myfileSmall{bashrc} with a terminal already opened, your modifica
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 \vspace*{\fill}
 \begin{center} 
+
+{\large \mytodo Install Extensions for VS Code} \doublerulefill
+
+    \begin{compactitem}
+        \item \urllink{https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros}{ROS}
+        \item \urllink{https://marketplace.visualstudio.com/items?itemName=twxs.cmake}{CMake}
+    \end{compactitem}
+
+
 {\large \mytodo Install Colcon} \doublerulefill
 
 \emph{\urllink{https://colcon.readthedocs.io/en/released/}{colcon} is a command line tool to improve the workflow of building, testing and using multiple software packages.}
@@ -2244,8 +2330,8 @@ If you modify \myfileSmall{bashrc} with a terminal already opened, your modifica
 \begin{compactitem}
     \item Install colcon:
     \begin{compactitem}
-        \item \myterminalSmall{sudo apt update}
-        \item \myterminalSmall{sudo apt install python3-colcon-common-extensions}
+        \item \myTerminal{sudo apt update}
+        \item \myTerminal{sudo apt install python3-colcon-common-extensions}
     \end{compactitem}
 \end{compactitem}
 \end{center}
@@ -2502,56 +2588,56 @@ There are mainly 2 ways to run Nodes in ROS.
 \hrulefill
 
 \begin{compactenum}
-\item \mytoolSmall{ros2 run <package> <executable>} starts \emph{only} 1 Node.
-\item \mytoolSmall{ros2 launch <package> <launch file>} starts \emph{at least} 1 Node, include other launch files, handles arguments, set parameters, etc.
+\item \myTool{ros2 run <package> <executable>} starts \emph{only} 1 Node.
+\item \myTool{ros2 launch <package> <launch file>} starts \emph{at least} 1 Node, include other launch files, handles arguments, set parameters, etc.
 \end{compactenum}
 \end{center}
 \vspace*{\fill}
 \end{frame}
 
 
-\subsection{The Tool ``ros2 run"}
+\subsection{ros2 run}
 \begin{frame}[fragile]{\secsec}
 \vspace*{\fill}
 \begin{center} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\large \mytodo \textsc{Run only a single Node}} \doublerulefill
+{\large \mytodo Run only a single Node} \doublerulefill
 
-\mytoolNormal{ros2 run <package> <executable>} --  <package> is the name of a ROS package and <executable> is the name of the executable from <package>.
+\myTool{ros2 run <package> <executable>} --  <package> is the name of a ROS package and <executable> is the name of the executable from <package>.
 
-\mynote An executable in \CC is the machine code of your program (after compiling and linking the source code). An executable in Python is a Python script (usually a \myfileSmall{*.py} file).
+\mynote An executable in \CC is the machine code of your program (after compiling and linking the source code). An executable in Python is a Python script (usually a \myFile{*.py} file) or a file generated from a Python script.
 
 \hrulefill
 
 \begin{compactitem}
-\item ROS Galactic comes with the package \mypackageSmall{demo_nodes_cpp} installed. 
-\item This package includes a Publisher with the name \mynodeSmall{talker} and a Subscriber with the name \mynodeSmall{listener}.
-\item The Publisher can be started from the executable \myfileSmall{talker} and the Subscriber can be started from the executable \myfileSmall{listener}.
-    \item In one terminal, run the Publisher with \myterminalSmall{ros2 run demo_nodes_cpp talker}
-    \item In a different terminal, run the Subscriber with \myterminalSmall{ros2 run demo_nodes_cpp listener}
+\item ROS Galactic comes with the package \myROSPackage{demo_nodes_cpp} installed. 
+\item This package includes a Publisher with the name \myNode{talker} and a Subscriber with the name \myNode{listener}
+\item The Publisher can be started from the executable \textit{talker} and the Subscriber can be started from the executable \textit{listener}.
+    \item In one terminal, run the Publisher with \myTerminal{ros2 run demo_nodes_cpp talker}
+    \item In a different terminal, run the Subscriber with \myTerminal{ros2 run demo_nodes_cpp listener}
 \end{compactitem}
 \end{center}
 \vspace*{\fill}
 \end{frame}
 
 
-\subsection{The Tool ``ros2 launch"}
+\subsection{ros2 launch}
 \begin{frame}[fragile]{\secsec}
 \vspace*{\fill}
 \begin{center} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\large \mytodo \textsc{Run a launch file}} \doublerulefill
+{\large \mytodo Run a launch file} \doublerulefill
 
-\mytoolNormal{ros2 launch <package> <launch file name>} --  <package> is the name of a ROS package and <launch file name> is the name of a launch file which belongs to <package>.
+\myTool{ros2 launch <package> <launch file name>} --  <package> is the name of a ROS package and <launch file name> is the name of a launch file which belongs to <package>.
 
 \hrulefill
 
 \begin{compactitem}
 \item A \urllink{https://docs.ros.org/en/foxy/Tutorials/Intermediate/Launch/Creating-Launch-Files.html}{launch file}  written in Python, XML, or YAML can start and stop different nodes as well as trigger and act on various events. 
 \item The following command will start both the Publisher and the Subscriber.
-\item[]\myterminalSmall{ros2 launch demo_nodes_cpp talker_listener.launch.py}
+\item[]\myTerminal{ros2 launch demo_nodes_cpp talker_listener.launch.py}
 \end{compactitem}
 
 
@@ -2574,26 +2660,26 @@ There are mainly 2 ways to run Nodes in ROS.
 \hrulefill
 
 \begin{compactenum}
-\item \mytoolSmall{ros2 node <option> [node name]} provides different options to introspects Nodes. Some examples are:
+\item \myTool{ros2 node <option> [node name]} provides different options to introspects Nodes. Some examples are:
 
 \begin{compactitem}
 \footnotesize
-\item \mytoolFoot{ros2 node list} lists all running Nodes.
-\item \mytoolFoot{ros2 node info <node name>} provides information for a given Node.
+\item \myTool{ros2 node list} lists all running Nodes.
+\item \myTool{ros2 node info <node name>} provides information for a given Node.
 \end{compactitem}
 
-\item \mytoolSmall{ros2 topic <option> [topic name]} provides different options to introspects Topics. Some examples are:
+\item \myTool{ros2 topic <option> [topic name]} provides different options to introspects Topics. Some examples are:
 \begin{compactitem}
 \footnotesize
-\item \mytoolFoot{ros2 topic list} lists all running Topics. Add the option \mytoolFoot{-t} to get the type of each Topic.
-\item \mytoolFoot{ros2 topic info <topic name>} provides information for a given Topic. Add the option \mytoolFoot{-v} for more information.
-\item \mytoolFoot{ros2 topic find <message type>} list all Topics with the given Message type.
-\item \mytoolFoot{ros2 topic echo <topic name>} displays Messages being published on <topic name>.
-\item \mytoolFoot{ros2 topic hz <topic name>} displays the frequency at which Messages are published.
+\item \myTool{ros2 topic list} lists all running Topics. Add the option \myTool{-t} to get the type of each Topic.
+\item \myTool{ros2 topic info <topic name>} provides information for a given Topic. Add the option \myTool{-v} for more information.
+\item \myTool{ros2 topic find <message type>} list all Topics with the given Message type.
+\item \myTool{ros2 topic echo <topic name>} displays Messages being published on <topic name>.
+\item \myTool{ros2 topic hz <topic name>} displays the frequency at which Messages are published.
 \end{compactitem}
 
 
-\item \mytoolSmall{rqt_graph} visually shows the connections between Nodes and Topics.
+\item \myTool{rqt_graph} visually shows the connections between Nodes and Topics.
 \end{compactenum}
 \end{center}
 \vspace*{\fill}
@@ -2614,14 +2700,14 @@ There are mainly 2 ways to run Nodes in ROS.
 
 \begin{compactitem}
 \item Create a workspace anywhere you want and give it a name of your choice.
-\item[]\myterminalSmall{mkdir -p \textasciitilde/enpm809e_ws/src}
+\item[]\myTerminal{mkdir -p \textasciitilde/enpm663_ws/src}
 \begin{compactitem}
-\item \mywarning The \mydirSmall{src} folder is where you will create your custom ROS packages or the ones you will clone from github.
+\item \mywarning The \myFolder{src} folder is where you will create your custom ROS packages or the ones you will clone from github.
 \end{compactitem}
-\item Build the workspace: \myterminalSmall{cd \textasciitilde/enpm809e_ws} followed with \myterminalSmall{colcon build}
+\item Build the workspace: \myTerminal{cd \textasciitilde/enpm663_ws} followed with \myTerminal{colcon build}
 \begin{compactitem}
 \item \mywarning You have to be in the root folder of the workspace to build it.
-\item \mynote The build process looks at packages inside \mydirSmall{src}  and build them. As of now, there is no package in \mydirSmall{src} but some folders are generated.
+\item \mynote The build process looks at packages inside \myFolder{src}  and build them. As of now, there is no package in \myFolder{src} but some folders are generated.
 \end{compactitem}
 \end{compactitem}
 \end{center}
@@ -2644,7 +2730,7 @@ There are mainly 2 ways to run Nodes in ROS.
   for tree={% folder icons by default; override using file for file icons
     directory,
   },
-  [\footnotesize enpm809e_ws
+  [\footnotesize enpm663_ws
     [\footnotesize~src]
     [\footnotesize~build]
     [\footnotesize~log ]
@@ -2660,20 +2746,16 @@ There are mainly 2 ways to run Nodes in ROS.
     
 \begin{column}{0.7\textwidth}
 \begin{compactitem}
-\item \mydirSmall{src} contains custom ROS packages. These packages can be the ones you created or external ones.
-\item \mydirSmall{build} contains the intermediate build
+\small
+\item \myFolder{src} contains custom ROS packages. These packages can be the ones you created or external ones.
+\item \myFolder{build} contains the intermediate build
 products for each package. For instance, object files are created in this folder.
-\item \mydirSmall{log} contains log files generated during the build process.
-\item \mydirSmall{install} contains the final build products which can be used to run code, but relies on the presence of the source space. For instance, executable files and libraries are generated in this folder.
+\item \myFolder{log} contains log files generated during the build process.
+\item \myFolder{install} contains the final build products which can be used to run code, but relies on the presence of the source space. For instance, executable files and libraries are generated in this folder.
 \begin{compactitem}
-\item This folder contains the file \myfileSmall{setup.bash} which you will need to source so that ROS can detect your custom packages in this workspace. 
-\item \mytodo Add the command to source this file in your \myfileSmall{bashrc}
-\begin{compactitem}
+\item This folder contains the file \myFile{setup.bash} which you will need to source so that ROS can detect your custom packages in this workspace. 
+\item \mytodo Add the command to source this file in your \myFile{bashrc} This command must come after sourcing your ROS distribution.
 
-\item \mynote This command must come after sourcing your ROS distribution.
-% \item \myterminalFoot{source /opt/ros/galactic/setup.bash}
-% \item \myterminalFoot{source \textasciitilde/ros2_ws/install/setup.bash}
-\end{compactitem}
 \end{compactitem}
 \end{compactitem}
 \end{column}
@@ -2693,7 +2775,7 @@ products for each package. For instance, object files are created in this folder
 
 \begin{compactitem}
 \footnotesize
-\item Edit \myfileFoot{.bashrc}
+\item Edit \myFile{bashrc}
     \begin{bashScriptListLine}
 source /opt/ros/galactic/setup.bash
 source <path_to_worspace>/install/setup.bash 
@@ -2703,7 +2785,7 @@ eval "$(register-python-argcomplete3 ros2)"
 eval "$(register-python-argcomplete3 colcon)"
     \end{bashScriptListLine}
 
-\item Edit \myfileFoot{.zshrc}
+\item Edit \myFile{zshrc}
     \begin{bashScriptListLine}
 source /opt/ros/galactic/setup.zsh
 source <path_to_worspace>/install/setup.zsh 
@@ -2735,15 +2817,15 @@ eval "$(register-python-argcomplete3 colcon)"
 
 \begin{compactitem}
 \footnotesize
-\item Package creation in ROS2 uses \mytoolScript{ament} as its build system and \mytoolScript{colcon} as its build tool. 
-\item  \mytoolScript{ament} is an evolution of \mytoolScript{catkin}
-\item \mytoolScript{ament} is a meta build system to improve building applications which are split into separate packages. It consists of two major parts:
+\item Package creation in ROS2 uses \myTool{ament} as its build system and \myTool{colcon} as its build tool. 
+\item  \myTool{ament} is an evolution of \myTool{catkin}
+\item \myTool{ament} is a meta build system to improve building applications which are split into separate packages. It consists of two major parts:
 \begin{compactitem}
 \footnotesize
 \item A build system to configure, build, and install a single package.
-\item A tool to invoke the build of individual packages in their topological order. The tool relies on meta information about the packages to determine their dependencies and their build type. This meta information is defined in a manifest file called \myfileFoot{package.xml} which is specified in \urllink{https://www.ros.org/reps/rep-0140.html}{REP 140}.
+\item A tool to invoke the build of individual packages in their topological order. The tool relies on meta information about the packages to determine their dependencies and their build type. This meta information is defined in a manifest file called \myFile{package.xml} which is specified in \urllink{https://www.ros.org/reps/rep-0140.html}{REP 140}.
 \end{compactitem}
-\item More information on \mytoolScript{ament} can be found \urllink{https://design.ros2.org/articles/ament.html}{here}.
+\item More information on \myTool{ament} can be found \urllink{https://design.ros2.org/articles/ament.html}{here}.
 \end{compactitem}
 \end{center}
 \vspace*{\fill}
@@ -2757,9 +2839,13 @@ eval "$(register-python-argcomplete3 colcon)"
 \begin{frame}[fragile]{\secsec}
 \vspace*{\fill}
 \begin{center} 
-{\normalsize \mytodo Create the \CC package \mypackageNormal{first_package_cpp}} \doublerulefill
+{\normalsize \mytodo Create the \CC package \myROSPackage{first_package_cpp}} \doublerulefill
 
-\myreminder Packages are created in \mydirNormal{\textasciitilde/enpm809e_ws/src}
+\begin{compactitem}
+    \small
+    \item \myreminder Packages are created in the \myFolder{src} folder of your workspace.
+\end{compactitem}
+
 
 
 
@@ -2767,11 +2853,12 @@ eval "$(register-python-argcomplete3 colcon)"
  
 \begin{compactitem}
 \footnotesize
-\item \myterminalFoot{cd \textasciitilde/enpm809e_ws/src}
-\item \myterminalFoot{ros2 pkg create first_package_cpp -{}-build-type ament_cmake -{}-dependencies rclcpp}
-\item or  \myterminalFoot{ros2 pkg create first_package_cpp  -{}-dependencies rclcpp}
-\item \myterminalFoot{cd \textasciitilde/enpm809e_ws \&\& colcon build}
-\item \myterminalFoot{source \textasciitilde/enpm809e_ws/install/setup.bash} 
+\item \myTerminal{cd \textasciitilde/enpm663_ws/src}
+\item \myTerminal{ros2 pkg create first_package_cpp -{}-build-type ament_cmake -{}-dependencies rclcpp}
+\item or  \myTerminal{ros2 pkg create first_package_cpp  -{}-dependencies rclcpp}
+\item \myTerminal{cd ..}
+\item \myTerminal{colcon build}
+\item \myTerminal{source install/setup.bash} 
 
 
 \end{compactitem}
@@ -2783,7 +2870,7 @@ eval "$(register-python-argcomplete3 colcon)"
 
 \item \mywarning Always source your workspace after building a new package for the first time.
 
-\item \mynote To build a specific package: \myterminalFoot{colcon build -{}-packages-select <package name>}
+\item \mynote To build a specific package: \myTerminal{colcon build -{}-packages-select <package name>}
 
 \end{compactitem}
 \end{center}
@@ -2844,16 +2931,18 @@ eval "$(register-python-argcomplete3 colcon)"
 
 {\normalsize \mytodo Create the Python package \mypackageNormal{first_package_py}} \doublerulefill
 
-\myreminder Packages are created in \mydirNormal{\textasciitilde/enpm809e_ws/src}
+\myreminder Packages are created in \mydirNormal{\textasciitilde/enpm663_ws/src}
 
 
 \hrulefill
  
 \begin{compactitem}
-\item \myterminalSmall{cd \textasciitilde/enpm809e_ws/src}
-\item \myterminalSmall{ros2 pkg create first_package_py -{}-build-type ament_python -{}-dependencies rclpy}
-\item \myterminalSmall{cd \textasciitilde/enpm809e_ws \&\& colcon build}
-\item \myterminalSmall{source \textasciitilde/enpm809e_ws/install/setup.bash} 
+\small
+\item \myTerminal{cd \textasciitilde/enpm663_ws/src}
+\item \myTerminal{ros2 pkg create first_package_py -{}-build-type ament_python -{}-dependencies rclpy}
+\item \myTerminal{cd ..}
+\item \myTerminal{colcon build}
+\item \myTerminal{source install/setup.bash} 
 \end{compactitem}
 \end{center}
 \vspace*{\fill}
@@ -2869,17 +2958,17 @@ eval "$(register-python-argcomplete3 colcon)"
 
     \begin{itemize}
     \footnotesize
-    \item \mydirFoot{first_package_py} -- This is your ROS package.
-    \item \mydirFoot{first_package_py} -- Directory with the same name as your package. This is where you create your Nodes (Python scripts).
-    \item \mydirFoot{resource} -- Folder which contains an empty file, with the same name as your package. In order to detect that a package is installed, ROS2 needs to install a marker file, which is the empty file inside \mydirFoot{resource}
-    \item \mydirFoot{test} -- Folder which contains files to run test for your package.
-        \item \myfileFoot{package.xml} contains meta information about the package.
-        \item \myfileFoot{setup.py} contains instructions for how to install the package.
+    \item \myFolder{first_package_py} -- This is your ROS package.
+    \item \myFolder{first_package_py} -- Directory with the same name as your package. This is where you create your Nodes (Python scripts).
+    \item \myFolder{resource} -- Folder which contains an empty file, with the same name as your package. In order to detect that a package is installed, ROS2 needs to install a marker file, which is the empty file inside \myFolder{resource}
+    \item \myFolder{test} -- Folder which contains files to run test for your package.
+        \item \myFile{package.xml} contains meta information about the package.
+        \item \myFile{setup.py} contains instructions for how to install the package.
         \begin{itemize}
         \scriptsize
             \item \mynote Each time you add a Node in your package you need to edit this file.
         \end{itemize}
-        \item \myfileFoot{setup.cfg} is required when a package has executables, so \mytoolFoot{ros2 run} can find them.
+        \item \myFile{setup.cfg} is required when a package has executables, so \myTool{ros2 run} can find them.
         
         
         
@@ -2923,8 +3012,8 @@ eval "$(register-python-argcomplete3 colcon)"
 {\large \mynote \textsc{Python Packages}} \doublerulefill
 
 \begin{itemize}
-    \item You can execute Python Nodes without building the Python package. However, when a package is built, colcon installs the Python scripts in a place where they can find other modules from other packages, where they can be found by other scripts. It will also allow you to start a node with \mytoolSmall{ros2 run}, add it in a launch file, pass parameters to it, etc.
-    \item When \myterminalSmall{colcon build -{}-symlink-install} is used, building a Python package again is not required after editing a Python script.
+    \item You can execute Python Nodes without building the Python package. However, when a package is built, colcon installs the Python scripts in a place where they can find other modules from other packages, where they can be found by other scripts. It will also allow you to start a node with \myTool{ros2 run}, add it in a launch file, pass parameters to it, etc.
+    \item When \myTerminal{colcon build -{}-symlink-install} is used, building a Python package again is not required after editing a Python script.
 \end{itemize}
 
 \end{center}
@@ -2943,7 +3032,7 @@ eval "$(register-python-argcomplete3 colcon)"
 \begin{center} 
 
 
-{\normalsize \mytodo Create a package for both \CC and  Python:~ \mypackageNormal{first_package}} \doublerulefill
+{\normalsize \mytodo Create a package for both \CC and  Python:~ \myROSPackage{first_package}} \doublerulefill
 
 \hrulefill
 
@@ -2954,17 +3043,17 @@ eval "$(register-python-argcomplete3 colcon)"
 \begin{compactenum}
     \footnotesize
     \item Create a standard \CC package:
-    \item[] \myterminalFoot{ros2 pkg create first_package -{}-build-type ament_cmake -{}-dependencies rclcpp rclpy}
+    \item[] \myTerminal{ros2 pkg create first_package -{}-build-type ament_cmake -{}-dependencies rclcpp rclpy}
     \item Create a Python package:
-    \item[] \myterminalFoot{cd <path to first_package>}
-    \item[] \myterminalFoot{mkdir first_package} -- This folder has the same name as the package. Python modules that need to be imported will be placed in this folder.
-    \item[] \myterminalFoot{touch first_package/__init__.py} 
-    \item[] \myterminalFoot{mkdir nodes} -- Python nodes will be placed in this folder.
+    \item[] \myTerminal{cd <path to first_package>}
+    \item[] \myTerminal{mkdir first_package} -- This folder has the same name as the package. Python modules that need to be imported will be placed in this folder.
+    \item[] \myTerminal{touch first_package/__init__.py} 
+    \item[] \myTerminal{mkdir nodes} -- Python nodes will be placed in this folder.
 \end{compactenum}
 
 \hrulefill
 
-{\normalsize \myreminder For this course you will need a package for \CC and Python Nodes} \doublerulefill
+{\normalsize \myreminder For this course you will need a package for \CC and Python Nodes}
 \end{center}
 \vspace*{\fill}
 \end{frame}
@@ -3004,13 +3093,13 @@ eval "$(register-python-argcomplete3 colcon)"
 \vspace*{\fill}
 \begin{center} 
 
-The tool \mytoolSmall{ros2 pkg list} provides a list of all visible package.
+The tool \myTool{ros2 pkg list} provides a list of all visible package.
 
 {\large \mytodo} \doublerulefill
 
 Check the packages we created in this class are listed.
 \begin{compactitem}
-\item \myterminalSmall{ros2 pkg list | grep first_package}
+\item \myTerminal{ros2 pkg list | grep first_package}
 \end{compactitem}
 
 \end{center}
@@ -3026,7 +3115,7 @@ Check the packages we created in this class are listed.
 \begin{center} 
 {\large \mynote} \doublerulefill
 
-{\large The package manifest \myfileNormal{package.xml} must be included with any
+{\large The package manifest \myFile{package.xml} must be included with any
 ROS-compliant package's root folder.}
 
 \hrulefill
@@ -3034,15 +3123,15 @@ ROS-compliant package's root folder.}
 \begin{compactitem}
 \item The package manifest has at least 3 purposes:
 \begin{compactenum}
-\item \mytoolSmall{ament} makes use of the manifest to build the dependency tree to determine build order. \item The manifest is used to install missing packages:
+\item \myTool{ament} makes use of the manifest to build the dependency tree to determine build order. \item The manifest is used to install missing packages:
 \begin{compactitem}
-\item \myterminalSmall{cd \textasciitilde/ros2_ws}
-\item \myterminalSmall{rosdep install -{}-from-paths ./src -{}-ignore-packages-from-source -y}
+\item \myTerminal{cd \textasciitilde/ros2_ws}
+\item \myTerminal{rosdep install -{}-from-paths ./src -{}-ignore-packages-from-source -y}
 
 \end{compactitem}
 \item Information on packages released to the ROS community is pulled from this file (see example with  \urllink{https://index.ros.org/p/rclcpp/#galactic-deps}{rclcpp}).
 \end{compactenum}
-\item \mynote If you are planning to release a ROS package to the community, edit \myfileNormal{package.xml} with the correct information.
+\item \mynote If you are planning to release a ROS package to the community, edit \myFile{package.xml} with the correct information.
 \end{compactitem}
 \end{center}
 \vspace*{\fill}
@@ -3299,43 +3388,27 @@ ROS-compliant package's root folder.}
 %%%%%%%%%%%%%%%%%%
 %   --- FRAME
 %%%%%%%%%%%%%%%%%%
-\section{Function for Package}
+\section{Function for Sourcing a Specific Package}
 \begin{frame}[fragile]{\sec}
 \vspace*{\fill}
 \begin{center} 
 
-\begin{bashTinyList}
-code_path=/home/zeid/ariac2023_fork
-
-function ariac(){
-  if [ "$1" = "-b" ]
-  then
-    cd $code_path
-    colcon build
-    source install/setup.zsh
-  elif [ "$1" = "-c" ]
-  then
-    cd $code_path
-    rm -rf build install log
-    colcon build
-    source install/setup.zsh
-  elif [ "$1" = "-r" ]
-  then
-    ros2 launch ariac_gazebo ariac.launch.py
-  else
-    source /opt/ros/galactic/setup.zsh
-    cd $code_path
-    source install/setup.zsh 
-    export _colcon_cd_root=/opt/ros/galactic
-    source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
-    source /usr/share/colcon_cd/function/colcon_cd.sh
-    eval "$(register-python-argcomplete3 ros2)"
-    eval "$(register-python-argcomplete3 colcon)"
-  fi
+\begin{bashScriptList}
+# define the function
+function enpm663(){
+  source /opt/ros/galactic/setup.zsh
+  cd /home/zeid/dev/enpm663_ws
+  source install/setup.zsh
+  export _colcon_cd_root=/home/zeid/dev/enpm663_ws
+  source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
+  source /usr/share/colcon_cd/function/colcon_cd.sh
+  eval "$(register-python-argcomplete3 ros2)"
+  eval "$(register-python-argcomplete3 colcon)"
 }
 
-ariac
-\end{bashTinyList}
+# call the function
+enpm663
+\end{bashScriptList}
 
 \end{center}
 \vspace*{\fill}
